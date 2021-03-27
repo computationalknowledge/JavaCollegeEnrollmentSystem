@@ -1,0 +1,18 @@
+public class Calculator{
+	static int i = 0;
+	public static void main(String [] args){
+		// practice some exception handling
+		
+		try{
+			// let's handle ALL command line arguments:
+			while (i < args.length){
+				System.out.println(args[i]);
+		}
+		}
+
+		catch (Exception e){
+			System.out.println(e);
+		}
+		System.out.println("you survived the Crash!");
+	}
+}
