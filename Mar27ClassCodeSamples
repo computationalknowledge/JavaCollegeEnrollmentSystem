@@ -1,18 +1,37 @@
 public class Calculator{
 	static int i = 0;
 	public static void main(String [] args){
-		// practice some exception handling
+		// https://beginnersbook.com/2013/12/java-arraylist/
 		
 		try{
-			// let's handle ALL command line arguments:
-			while (i < args.length){
-				System.out.println(args[i]);
-		}
+			// call findHighest() and pass the args parameter to it
+			System.out.println(FindHighestNumber.findHighest(args));
 		}
 
 		catch (Exception e){
 			System.out.println(e);
 		}
 		System.out.println("you survived the Crash!");
+	}
+}
+
+class FindHighestNumber{
+	public static int findHighest(String [] inputNumbers ){
+		int CurrentHighestNumber = 0;
+		// write Pseudocode to describe our Alogithm: Algorithm is just the processing steps to deliver the requirement
+		// Step 1. Echo back to the console the input we were given
+		// Step 2. How are we going to indentify the Highest Number ?
+		// https://www.javatpoint.com/java-string-to-int
+		// int i=Integer.parseInt(s);  
+
+		int loopCounter = 0;
+		while (loopCounter < inputNumbers.length) {
+			if (Integer.parseInt(inputNumbers[loopCounter]) > CurrentHighestNumber) {
+				CurrentHighestNumber = Integer.parseInt(inputNumbers[loopCounter]);
+			}
+			loopCounter++;
+		}
+
+		return CurrentHighestNumber;
 	}
 }
